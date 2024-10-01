@@ -10,7 +10,7 @@ setValue(data.user.email)
   }
     return (
     <div>
-      <button onClick={LoginWidthGoogle}>Login</button>
+      <button onClick={LoginWidthGoogle}>Google dan ruyhatdan utish</button>
       <h2>Siz Mufaqiyatli ruyhatdan utdingiz Tabriklaymiz{value}</h2>
     </div>
   )
