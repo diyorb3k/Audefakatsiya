@@ -15,15 +15,16 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Stack from "@mui/material/Stack";
 import { auth as firebaseAuth, provider } from "./Audifikatsiya";
-import Hom from "./Home/Hom";
+import Hom from "./Hom";
 import google from "../assets/20221203181232!Google__G__logo.svg";
 import "../assets/style/Singin.scss";
+import { Link } from "react-router-dom";
 
 const Singin = () => {
   const [userEmail, setUserEmail] = useState("");
   const [inputEmail, setInputEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // Yangi state qo'shildi
+  const [showPassword, setShowPassword] = useState(false); 
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -116,8 +117,9 @@ const Singin = () => {
           </Stack>
 
           <Button variant="outlined" onClick={handlePasswordReset}>
-            Parolni tiklash
+            Parolni Qayta tiklash
           </Button>
+        
         </div>
       ) : (
         <Hom userEmail={userEmail} />

@@ -10,7 +10,6 @@ const firebaseConfig = {
   appId: "1:826403984823:web:e6db4d44138a6437000432",
 };
 
-// Firebase ilovasini inicializatsiya qilish (agar ilova mavjud bo'lmasa)
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
 
 const auth = getAuth(app);
