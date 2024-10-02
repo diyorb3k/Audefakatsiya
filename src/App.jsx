@@ -1,19 +1,9 @@
-import { useState } from "react"
-import { auth, provider } from "./components/Audifikatsiya"
-import { signInWithPopup } from "firebase/auth"
-import Hom from "./components/Home/Hom"
+import Singin from "./components/Singin"
+
 const App = () => {
-  const [value,setValue]=useState('')
-  const LoginWidthGoogle =()=>{
-    signInWithPopup(auth,provider).then((data)=>{
-setValue(data.user.email)
-    })
-  }
-    return (
+  return (
     <div>
-      {!value ? <button onClick={LoginWidthGoogle}>Google dan ruyhatdan utish</button> :<Hom />}
-      
-      
+      <Singin/>
     </div>
   )
 }
