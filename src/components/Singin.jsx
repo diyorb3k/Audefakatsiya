@@ -4,7 +4,10 @@ import {
     signInWithPopup,
     getAuth,
     fetchSignInMethodsForEmail,
-  } from "firebase/auth";
+  }
+   from "firebase/auth";
+   import Button from '@mui/material/Button';
+   import Stack from '@mui/material/Stack';
   import { useState } from "react";
   import { auth as firebaseAuth, provider } from "./Audifikatsiya";
   import Hom from "./Home/Hom";
@@ -74,10 +77,17 @@ import {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={handleLogin}>Kirish</button>
+<Stack spacing={2} direction="row">
+      <Button className="button" variant="contained"
+      onClick={handleLogin}
+      >Kirish</Button>
+    </Stack>
+            {/* <button onClick={handleLogin}>Kirish</button>
             <button onClick={loginWithGoogle}>
               <img src={google} alt="Google logo" /> Google orqali kirish
-            </button>
+            </button> */}
+            <Button variant="outlined" onClick={loginWithGoogle}><img src={google} alt="Google logo" />  Google orqali kirish</Button>
+
             <button onClick={handlePasswordReset}>
               Parolni tiklash
             </button>
