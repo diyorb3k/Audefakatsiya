@@ -59,7 +59,7 @@ const Singin = () => {
     if (inputEmail) {
       try {
         await sendPasswordResetEmail(auth, inputEmail);
-        alert("Parolni tiklash xabari yuborildi!");
+        alert("Email pochtangizga Parolni tiklash xabari yuborildi!");
       } catch (error) {
         console.error("Parolni tiklashda xato:", error);
         alert("Parolni tiklashda xato. Iltimos, emailni tekshiring.");
@@ -73,14 +73,10 @@ const Singin = () => {
     <div className="container">
       {!userEmail ? (
         <div className="usersingin">
-          {/* <input
-            autoComplete="on"
-            type="text"
-            placeholder="user email"
-            value={inputEmail}
-            onChange={(e) => setInputEmail(e.target.value)}
-          /> */}
-          <FormControl variant="filled">
+          <Button className="add" variant="outlined" onClick={loginWithGoogle}>
+            <img src={google} alt="Google logo" /> Google orqali ruyhatdan uting
+          </Button>
+          <FormControl className="email" variant="filled">
             <InputLabel htmlFor="filled-adornment-email">Email</InputLabel>
             <OutlinedInput
               type="text"
@@ -90,7 +86,7 @@ const Singin = () => {
             />
           </FormControl>
 
-          <FormControl variant="filled">
+          <FormControl className="email" variant="filled">
             <InputLabel htmlFor="standard-adornment-password">
               Password
             </InputLabel>
@@ -109,7 +105,7 @@ const Singin = () => {
             />
           </FormControl>
 
-          <Stack spacing={2} direction="row">
+          <Stack className="stack" spacing={2} direction="row">
             <Button
               className="button"
               variant="contained"
@@ -118,9 +114,7 @@ const Singin = () => {
               Kirish
             </Button>
           </Stack>
-          <Button variant="outlined" onClick={loginWithGoogle}>
-            <img src={google} alt="Google logo" /> Google orqali kirish
-          </Button>
+
           <Button variant="outlined" onClick={handlePasswordReset}>
             Parolni tiklash
           </Button>
